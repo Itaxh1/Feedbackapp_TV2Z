@@ -1,0 +1,20 @@
+.center {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.position {
+  position: absolute;
+  justify-content: center;
+  top: 100px;
+}
+.card-header {
+  color: black;
+}
+.btn {
+  color: white;
+}
+
+.mar {
+  margin-bottom: 10px;
+}

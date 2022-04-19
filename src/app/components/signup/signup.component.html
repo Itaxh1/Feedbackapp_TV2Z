@@ -1,0 +1,98 @@
+<div class="center">
+  <div class="position">
+    <div class="container">
+      <div class="text-center text-white pt-5">
+        <h1 class="mar">Sign UP</h1>
+      </div>
+      <br />
+      <div>
+        <form
+          [formGroup]="signupForm"
+          (ngSubmit)="loginUser()"
+          class="login-form-2"
+          novalidate
+          class="form"
+        >
+          <input
+            formControlName="name"
+            type="text"
+            class="form-control mar"
+            placeholder="Name"
+          />
+          <div
+            class="alert alert-danger"
+            *ngIf="
+              signupForm.get('email')?.hasError('required') &&
+              signupForm.get('email')?.touched
+            "
+          >
+            Name is Required
+          </div>
+          <div>
+            <form
+              [formGroup]="signupForm"
+              (ngSubmit)="loginUser()"
+              novalidate
+              class="form"
+            >
+              <input
+                formControlName="email"
+                type="text"
+                class="form-control mar"
+                placeholder="Enter Email"
+              />
+              <div
+                class="alert alert-danger"
+                *ngIf="
+                  signupForm.get('email')?.hasError('required') &&
+                  signupForm.get('email')?.touched
+                "
+              >
+                Email is required
+              </div>
+              <input
+                formControlName="password"
+                id="pas"
+                type="password"
+                class="form-control mar"
+                placeholder="Enter Password"
+              />
+              <div
+                class="alert alert-danger"
+                *ngIf="
+                  !signupForm.get('password')?.valid &&
+                  signupForm.get('email')?.touched
+                "
+              >
+                Password is required <br />and should have at least one
+                uppercase,<br />
+                lowercase, numeric and special character.
+              </div>
+              <input
+                formControlName="confirm_password"
+                type="password"
+                class="form-control mar"
+                placeholder="Re-Enter Password"
+              />
+              <div
+                class="alert alert-danger"
+                *ngIf="
+                  !signupForm.get('password')?.valid &&
+                  signupForm.get('email')?.touched
+                "
+              >
+                Password does not match
+              </div>
+              <button
+                [disabled]="signupForm.invalid"
+                class="btn btn-outline-secondary"
+              >
+                Login
+              </button>
+            </form>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

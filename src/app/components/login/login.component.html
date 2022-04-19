@@ -1,0 +1,148 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+
+<div class="text-center">
+  <br /><br /><br />
+  <h2 class="center fontw" id="#5">LOG IN</h2>
+  <br /><br />
+  <h4 class="center">Enter your login credenitals</h4>
+  <br />
+  <div class="center">
+    <div class="form-inline">
+      <div class="clearfix">
+        <form
+          (ngSubmit)="loginUser()"
+          [formGroup]="loginForm"
+          novalidate
+          class="form"
+        >
+          <div class="d-flex justify-content-between">
+            <div class="mb-2 pos" style="margin-right: 30px">
+              <input
+                size="30"
+                formControlName="email"
+                type="text"
+                class="form-control"
+                placeholder="Enter Email"
+              />
+              <br />
+              <div
+                class="alert alert-danger"
+                *ngIf="
+                  loginForm.get('email')?.hasError('required') &&
+                  loginForm.get('email')?.touched
+                "
+              >
+                Email is required field
+              </div>
+            </div>
+
+            <div>
+              <div style="display: inline-block">
+                <input
+                  size="32"
+                  formControlName="password"
+                  type="password"
+                  class="form-control"
+                  placeholder="Enter Password"
+                />
+
+                <a class="type-toggle" (click)="toggleShow()">
+                  <i
+                    class="fa-eye"
+                    [hidden]="showPassword"
+                    name="eye-off-outline"
+                  >
+                  </i>
+                  <i
+                    class="fa-eye-slash"
+                    [hidden]="!showPassword"
+                    name="eye-outline"
+                  ></i>
+                </a>
+              </div>
+
+              <div
+                *ngIf="
+                  !loginForm.get('password')?.valid &&
+                  loginForm.get('email')?.touched
+                "
+              >
+                <br />
+                <div class="alert alert-danger" size="25">
+                  Password is required<br />
+                  and should have at least one uppercase,<br />
+                  lowercase, numeric and special character.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <small class="slin">Forgot Password?</small>
+          <a
+            routerLink="/signup"
+            style="
+              display: inline-block;
+              font-weight: 700;
+              color: beige !important;
+              text-decoration: none !important;
+              font-size: small;
+            "
+            routerLinkActive="active"
+            >Click here!</a
+          >
+          <br />
+
+          <small class="slin"
+            >By clicking LogIn button, you are hearbly agreeing to our
+          </small>
+          <a
+            routerLink="/signup"
+            style="
+              display: inline-block;
+              font-weight: 500;
+              font-size: medium;
+              color: beige !important;
+              text-decoration: none !important;
+            "
+            routerLinkActive="active"
+            >Privacy Policy
+          </a>
+          <p class="slin">_ and</p>
+          <a
+            routerLink="/signup"
+            style="
+              display: inline-block;
+              font-size: medium;
+              font-weight: 500;
+              color: beige !important;
+              text-decoration: none !important;
+            "
+            routerLinkActive="active"
+            >Terms Conditons.</a
+          >
+          <div class="text-center">
+            <button [disabled]="loginForm.invalid" class="btn-grad btn-info">
+              Login
+            </button>
+          </div>
+        </form>
+      </div>
+      <br />
+      <p class="sline">Don't have an account?</p>
+      <a
+        routerLink="/signup"
+        style="
+          display: inline-block;
+          font-weight: 700;
+          color: beige !important;
+          text-decoration: none !important;
+        "
+        routerLinkActive="active"
+        >Sign Up!</a
+      >
+    </div>
+  </div>
+</div>

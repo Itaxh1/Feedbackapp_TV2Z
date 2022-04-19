@@ -1,0 +1,93 @@
+<div class="feedback-layout" style="justify-content: center">
+  <div class="centre feedback-card style=" styles="border-radius: 25px;">
+    <h2 class="text-center fontw">Feedback</h2>
+
+    <p class="text-center">
+      Have a bug or Suggestion ? Please fill the form to Report!
+      <br />
+      Below to report it to us.
+    </p>
+    <div>
+      <form
+        [formGroup]="feedbackForm"
+        (ngSubmit)="onSubmit()"
+        novalidate
+        class="form"
+      >
+        <input
+          formControlName="feedback1"
+          type="text"
+          class="form-control"
+          placeholder="Problem/Bug"
+          required="Please fill this field"
+        />
+
+        <div>
+          <div>
+            <p></p>
+            <textarea
+              style="white-space: pre"
+              rows="4"
+              cols="50"
+              type="text"
+              formControlName="feedbacktype"
+              placeholder="Descreption"
+            >
+            </textarea>
+          </div>
+        </div>
+
+        <div class="text-center" style="margin: 20px">
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="1"
+              formControlName="feedbackradio"
+              [checked]="true"
+              value="1"
+            />
+            <label class="form-check-label" for="1"> Bug </label>
+          </div>
+
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="2"
+              formControlName="feedbackradio"
+              [checked]="true"
+              value="2"
+            />
+            <label class="form-check-label" for="2"> Suggestion </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="3"
+              formControlName="feedbackradio"
+              [checked]="true"
+              value="3"
+            />
+            <label class="form-check-label" for="3"> Others </label>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <button
+            type="submit"
+            style="justify-content: center; justify-self: center"
+            id="1"
+            class="btn btn-primary text-center btn-block w-50 mx-auto"
+            data-toggle="button"
+            aria-pressed="false"
+            autocomplete="off"
+          >
+            Submit Feedback
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

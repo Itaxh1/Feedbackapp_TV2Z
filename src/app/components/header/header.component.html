@@ -1,0 +1,24 @@
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+<a
+  class="navbar navbar-dark navbar-transparent"
+  style="padding-top: 20px; padding-left: 20px"
+>
+  <div class="logo-image">
+    <a href="/">
+      <img src="../../../assets/Logo.svg" class="img-fluid" />
+    </a>
+  </div>
+
+  <div class="container">
+    <!-- Link to Login page -->
+    <form class="container">
+      <input type="text" name="search" placeholder="Search.." />
+      <a href="/login">
+        <span class="lpath" *ngIf="!showHeaderB()" [innerHTML]="value"> </span>
+      </a>
+    </form>
+  </div>
+</a>

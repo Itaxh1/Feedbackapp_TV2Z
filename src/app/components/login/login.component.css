@@ -1,0 +1,67 @@
+.link {
+  display: inline;
+}
+.gradient-buttons .btn {
+  color: #03aad3;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  vertical-align: text-top;
+}
+
+.fontw {
+  font-weight: 700 !important;
+}
+.text-center {
+  align-items: center;
+  justify-content: center;
+  vertical-align: text-top;
+}
+
+.btn-grad:hower {
+  background-image: linear-gradient(to right, #107282 17%, #091422 100%);
+}
+
+.btn-grad {
+  margin: 10px;
+  padding: 5px 25px;
+  color: beige;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.btn-grad:hover {
+  /* change the direction of the change here */
+  color: rgba(197, 183, 0, 0.947);
+  text-decoration: none;
+}
+
+.sline {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: larger;
+}
+.position {
+  position: absolute;
+  justify-content: center;
+  top: 100px;
+}
+
+.slin {
+  display: inline-block;
+  margin-right: 10px;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+br {
+  display: block;
+  margin: 10px 0;
+}
