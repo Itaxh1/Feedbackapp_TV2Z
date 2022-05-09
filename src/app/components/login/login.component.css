@@ -54,7 +54,7 @@
 
 .slin {
   display: inline-block;
-  margin-right: 10px;
+ 
 }
 .clearfix::after {
   content: "";

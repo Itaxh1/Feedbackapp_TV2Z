@@ -44,23 +44,15 @@
                 <input
                   size="32"
                   formControlName="password"
-                  type="password"
+                  [type]="showPassword?'password':'text'"
                   class="form-control"
                   placeholder="Enter Password"
                 />
-
-                <a class="type-toggle" (click)="toggleShow()">
-                  <i
-                    class="fa-eye"
-                    [hidden]="showPassword"
-                    name="eye-off-outline"
-                  >
-                  </i>
-                  <i
-                    class="fa-eye-slash"
-                    [hidden]="!showPassword"
-                    name="eye-outline"
-                  ></i>
+                <a *ngIf="showPassword" class="type-toggle" (click)="showPassword=false">
+                  <img src="assets/Eye-off.svg">
+                </a>
+                <a *ngIf="!showPassword" class="type-toggle" (click)="showPassword=true">  
+                  <img src="assets/Eye-on.svg">
                 </a>
               </div>
 
@@ -108,9 +100,9 @@
               text-decoration: none !important;
             "
             routerLinkActive="active"
-            >Privacy Policy
+            >Privacy Policy 
           </a>
-          <p class="slin">_ and</p>
+          <p class="slin"> &nbsp; and &nbsp;</p>
           <a
             routerLink="/signup"
             style="

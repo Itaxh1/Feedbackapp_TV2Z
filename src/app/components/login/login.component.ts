@@ -43,12 +43,7 @@ export class LoginComponent implements OnInit {
     sessionStorage.setItem('Status', this.flag);
     this.router.navigate(['/feedback']);
   }
-  toggleShow() {
-    this.showPassword = !this.showPassword;
-    this.input = this.showPassword ? 'text' : 'password';
-
-    return this.showPassword;
-  }
+  
 }
 
 function key(key: any, arg1: string) {
